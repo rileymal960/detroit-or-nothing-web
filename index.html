@@ -1,142 +1,573 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detroit Or Nothing | Civic Leadership & Applied Tech</title>
+  <title>Detroit Or Nothing | Civic Innovation & Applied AI</title>
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#0284c7',
+              darkBlue: '#0369a1',
+              charcoal: '#0f172a',
+              sand: '#f8fafc',
+            }
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'float': 'float 4s ease-in-out infinite',
+            'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            },
+            pulseSubtle: {
+              '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+              '50%': { opacity: '0.9', transform: 'scale(1.02)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .badge-glow {
+      box-shadow: 0 4px 14px 0 rgba(2, 132, 199, 0.25);
+    }
+  </style>
 </head>
-<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+<body class="bg-slate-50 text-slate-900 font-sans selection:bg-sky-100 selection:text-sky-900 antialiased overflow-x-hidden">
 
-  <!-- Header -->
-  <header class="max-w-5xl mx-auto px-6 py-8 flex justify-between items-center border-b border-neutral-800">
-    <div>
-      <span class="text-xl font-black tracking-wider uppercase">Detroit Or Nothing</span>
-      <p class="text-xs text-neutral-400">Est. 2016 • Civic Leadership & Innovation</p>
-    </div>
-    <a href="#partner" class="text-xs bg-white text-black font-semibold px-4 py-2 rounded-full hover:bg-neutral-200 transition">Partner With Us</a>
-  </header>
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-slate-900 text-white text-xs py-2.5 px-4 text-center tracking-wide font-medium">
+    <span class="inline-flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+      <span>Now booking 2026 youth cohort workshops (Ages 16–24) for civic and corporate partners</span>
+      <a href="#workshops" class="underline font-bold hover:text-sky-400 ml-1">Explore Tracks &rarr;</a>
+    </span>
+  </div>
 
-  <!-- Hero Section -->
-  <section class="max-w-5xl mx-auto px-6 py-20">
-    <div class="inline-block bg-neutral-900 border border-neutral-800 text-xs text-neutral-300 px-3 py-1.5 rounded-full mb-6">
-      10-Year Community Initiative • Youth Development (Ages 16–24)
-    </div>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
-      Grassroots Leadership.<br />
-      <span class="text-neutral-400">Rebuilt With Applied AI.</span>
-    </h1>
-    <p class="text-lg md:text-xl text-neutral-300 max-w-2xl mb-8 leading-relaxed">
-      A decade of hands-on neighborhood impact meets next-generation technology. We build educational workshops and digital systems that keep Detroit dollars in Detroit communities.
-    </p>
-    <div class="flex flex-wrap gap-4">
-      <a href="#workshops" class="bg-blue-600 hover:bg-blue-500 text-white font-medium px-6 py-3 rounded-lg text-sm transition">Explore Workshops</a>
-      <a href="#app" class="bg-neutral-900 border border-neutral-700 hover:border-neutral-500 text-white font-medium px-6 py-3 rounded-lg text-sm transition">View Live App POC</a>
-    </div>
-  </section>
-
-  <!-- Proof of Concept Section -->
-  <section id="app" class="border-t border-b border-neutral-800 bg-neutral-900/50 py-16">
-    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Case Study & Proof of Concept</span>
-        <h2 class="text-3xl font-bold mt-2 mb-4">Detroit ON (DON) Ecosystem</h2>
-        <p class="text-neutral-300 text-sm leading-relaxed mb-4">
-          Originally launched in 2016 with over 300 Detroit merchants onboarded, Detroit ON creates a closed-loop civic economy: youth and residents take leadership in neighborhood causes and earn rewards at independent local businesses.
-        </p>
-        <p class="text-neutral-300 text-sm leading-relaxed mb-6">
-          We recently rebuilt the entire system from the ground up using generative AI workflows—serving as a live, functional blueprint for our youth digital curriculum.
-        </p>
-        <div class="grid grid-cols-2 gap-4 border-t border-neutral-800 pt-4 text-xs">
-          <div>
-            <p class="text-neutral-400">Economic Model</p>
-            <p class="font-semibold text-white mt-1">Local Dollar Retention</p>
-          </div>
-          <div>
-            <p class="text-neutral-400">Technical Pipeline</p>
-            <p class="font-semibold text-white mt-1">Concept to Functional AI Build</p>
-          </div>
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+      <!-- LOGO AREA -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-black text-xl shadow-md group-hover:bg-sky-600 transition">
+          <i data-lucide="power" class="w-5 h-5 text-sky-400"></i>
         </div>
-      </div>
-      <div class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl flex flex-col justify-between h-72">
         <div>
-          <span class="text-xs bg-emerald-950 text-emerald-400 border border-emerald-800 px-2.5 py-1 rounded-full">Interactive App</span>
-          <h3 class="text-xl font-bold mt-4">Experience Detroit ON</h3>
-          <p class="text-xs text-neutral-400 mt-2">Test the live interface, explore verified D-Vents, and review community macro-impact tracking.</p>
+          <span class="text-xl font-black tracking-tight text-slate-900 block leading-none">
+            Detroit<span class="text-sky-600">ON</span>
+          </span>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-slate-600 block mt-0.5">Detroit Or Nothing Project</span>
         </div>
-        <a href="https://your-preview-link-here" target="_blank" class="text-center bg-white text-black py-2.5 rounded-lg text-xs font-bold hover:bg-neutral-200 transition">
-          Launch App Preview &rarr;
+      </a>
+
+      <!-- NAV ACTIONS -->
+      <div class="flex items-center gap-3">
+        <a href="#workshops" class="hidden sm:inline-flex text-xs font-bold text-slate-600 hover:text-slate-900 px-3 py-2">
+          Curriculum
+        </a>
+        <a href="#founder" class="hidden sm:inline-flex text-xs font-bold text-slate-600 hover:text-slate-900 px-3 py-2">
+          Leadership
+        </a>
+        <a href="#app" class="inline-flex items-center gap-1.5 text-xs font-bold text-sky-700 bg-sky-50 border border-sky-200 px-3.5 py-2 rounded-lg hover:bg-sky-100 transition">
+          <i data-lucide="smartphone" class="w-3.5 h-3.5"></i> Test App
+        </a>
+        <a href="#register" class="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-slate-900 px-4 py-2 rounded-lg hover:bg-slate-800 transition shadow-sm">
+          Sign Up Programs
         </a>
       </div>
     </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Copy & Actions -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-full text-xs font-bold text-sky-700">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> 10-Year Track Record • Est. 2016 in Detroit
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1]">
+            Grassroots Leadership.<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-700">Rebuilt With Applied AI.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+            A decade-long movement bridging grassroots community power, neighborhood economics, and applied tech. We equip Detroit young adults (ages 16–24) to lead neighborhood causes and build real software from concept to execution.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#register" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-sky-600 hover:bg-sky-700 px-6 py-3.5 rounded-xl transition shadow-lg badge-glow">
+              <i data-lucide="user-plus" class="w-4 h-4"></i> Sign Programs Up for Workshops
+            </a>
+            <a href="#app" class="inline-flex items-center gap-2 text-sm font-bold text-slate-800 bg-white border border-slate-300 hover:border-slate-400 px-6 py-3.5 rounded-xl transition shadow-sm">
+              <i data-lucide="play-circle" class="w-4 h-4 text-sky-600"></i> Explore App POC
+            </a>
+          </div>
+
+          <!-- Micro Proof Numbers -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200 text-slate-800">
+            <div>
+              <p class="text-2xl font-black text-slate-900">10 Years</p>
+              <p class="text-xs text-slate-600 font-medium mt-0.5">Grassroots Action</p>
+            </div>
+            <div>
+              <p class="text-2xl font-black text-slate-900">300+</p>
+              <p class="text-xs text-slate-600 font-medium mt-0.5">Merchants Supported</p>
+            </div>
+            <div>
+              <p class="text-2xl font-black text-slate-900">16–24</p>
+              <p class="text-xs text-slate-600 font-medium mt-0.5">Young Men & Cohorts</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual App Mockup & Detroit Imagery -->
+        <div class="lg:col-span-5 relative">
+          <!-- Ambient Glow -->
+          <div class="absolute -inset-4 bg-gradient-to-r from-sky-400/20 to-blue-500/20 rounded-3xl blur-2xl -z-10"></div>
+          
+          <div class="relative bg-white border border-slate-200 rounded-3xl p-6 shadow-2xl space-y-4">
+            <!-- App Preview Header -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-slate-900 text-sky-400 flex items-center justify-center font-black">
+                  <i data-lucide="power" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h2 class="text-xs font-bold text-slate-900 leading-none">Detroit ON Mobile POC</h2>
+                  <p class="text-[10px] text-slate-600">App Powered by the People</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Ready to Test
+              </span>
+            </div>
+
+            <!-- Dynamic Community Image Carousel Card -->
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 group shadow-inner">
+              <img 
+                src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000&q=80" 
+                alt="Detroit youth and volunteers assembling food kits"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
+                <div class="text-white">
+                  <span class="text-[10px] uppercase font-bold tracking-wider bg-sky-600 px-2 py-0.5 rounded">Active Civic Loop</span>
+                  <p class="text-xs font-bold mt-1">Leading Community Shifts &bull; Earning Local Perks</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive App Actions -->
+            <div class="space-y-2 pt-2">
+              <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between">
+                <div>
+                  <p class="text-xs font-bold text-slate-800">The Closed-Loop Concept</p>
+                  <p class="text-[11px] text-slate-600">Volunteers serve &rarr; Earn DON Deals &rarr; Spend at Detroit stores</p>
+                </div>
+                <i data-lucide="repeat" class="w-4 h-4 text-sky-600"></i>
+              </div>
+
+              <a href="#app" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i> Test & Launch App Prototype
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  <!-- Workshop Offerings -->
-  <section id="workshops" class="max-w-5xl mx-auto px-6 py-20">
-    <div class="mb-12">
-      <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Cohort Curriculum</span>
-      <h2 class="text-3xl font-bold mt-2">Workshops for Young Men (Ages 16–24)</h2>
-      <p class="text-neutral-400 text-sm mt-1">Structured for institutional delivery, grant sponsorship, and community centers.</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-neutral-900 border border-neutral-800 p-6 rounded-xl">
-        <h3 class="font-bold text-lg mb-2">Applied AI & Rapid Prototyping</h3>
-        <p class="text-neutral-400 text-xs leading-relaxed mb-4">Using the rebuild of Detroit ON as a live case study, participants learn how to take an idea from napkin sketch to interactive software using modern AI tooling.</p>
-        <span class="text-[11px] font-semibold text-neutral-300 bg-neutral-800 px-2.5 py-1 rounded">Career / Tech Skills</span>
+  <!-- DETROIT IN ACTION PHOTO GRID (REAL STORIES & WORK) -->
+  <section class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Ground-Level Reality</span>
+        <h2 class="text-3xl font-black text-slate-900 tracking-tight mt-1">Detroit Young Adults, Technology & Neighborhood Impact</h2>
+        <p class="text-sm text-slate-600 mt-2">
+          From street distributions and urban agriculture to learning modern AI prototyping, our work centers around practical agency.
+        </p>
       </div>
 
-      <div class="bg-neutral-900 border border-neutral-800 p-6 rounded-xl">
-        <h3 class="font-bold text-lg mb-2">Civic Leadership & Community Velocity</h3>
-        <p class="text-neutral-400 text-xs leading-relaxed mb-4">Understanding hyper-local economics: how civic engagement, grassroots food relief, and shopping at neighborhood merchants builds collective community wealth.</p>
-        <span class="text-[11px] font-semibold text-neutral-300 bg-neutral-800 px-2.5 py-1 rounded">Civic Leadership</span>
-      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Image 1: Volunteering & Community Relief -->
+        <div class="group relative rounded-2xl overflow-hidden bg-slate-100 shadow-sm hover:shadow-md transition">
+          <img 
+            src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80" 
+            alt="Detroiters working together in community"
+            class="h-64 w-full object-cover group-hover:scale-105 transition duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-4 text-white">
+            <span class="text-[10px] font-bold text-sky-300 uppercase tracking-wider">Civic Service</span>
+            <p class="text-xs font-bold mt-0.5">Youth-Led Food & Grocery Mobiles</p>
+          </div>
+        </div>
 
-      <div class="bg-neutral-900 border border-neutral-800 p-6 rounded-xl">
-        <h3 class="font-bold text-lg mb-2">Workforce Agency & Digital Readiness</h3>
-        <p class="text-neutral-400 text-xs leading-relaxed mb-4">Translating non-traditional skills into formal opportunities. Resume positioning, digital project ownership, and practical execution in modern workspaces.</p>
-        <span class="text-[11px] font-semibold text-neutral-300 bg-neutral-800 px-2.5 py-1 rounded">Workforce Preparedness</span>
+        <!-- Image 2: Urban Ag & Legacy Enterprise -->
+        <div class="group relative rounded-2xl overflow-hidden bg-slate-100 shadow-sm hover:shadow-md transition">
+          <img 
+            src="https://images.unsplash.com/photo-1592417817098-8f3d69109853?auto=format&fit=crop&w=600&q=80" 
+            alt="Urban agriculture and greenhouse cultivation in Detroit"
+            class="h-64 w-full object-cover group-hover:scale-105 transition duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-4 text-white">
+            <span class="text-[10px] font-bold text-emerald-300 uppercase tracking-wider">Greenhub Detroit</span>
+            <p class="text-xs font-bold mt-0.5">Urban Greenhouses & Environmental Stewardship</p>
+          </div>
+        </div>
+
+        <!-- Image 3: Tech & Digital Literacy -->
+        <div class="group relative rounded-2xl overflow-hidden bg-slate-100 shadow-sm hover:shadow-md transition">
+          <img 
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" 
+            alt="Young adults collaborating on tech and mobile devices"
+            class="h-64 w-full object-cover group-hover:scale-105 transition duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-4 text-white">
+            <span class="text-[10px] font-bold text-sky-300 uppercase tracking-wider">Applied Tech</span>
+            <p class="text-xs font-bold mt-0.5">Mobile Prototyping & AI Workshops</p>
+          </div>
+        </div>
+
+        <!-- Image 4: Restored Athletic Fields / Youth Sports -->
+        <div class="group relative rounded-2xl overflow-hidden bg-slate-100 shadow-sm hover:shadow-md transition">
+          <img 
+            src="https://images.unsplash.com/photo-1508802513724-42f89f2d5930?auto=format&fit=crop&w=600&q=80" 
+            alt="Youth baseball diamond in Detroit"
+            class="h-64 w-full object-cover group-hover:scale-105 transition duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-4 text-white">
+            <span class="text-[10px] font-bold text-amber-300 uppercase tracking-wider">Youth Leadership</span>
+            <p class="text-xs font-bold mt-0.5">Diamond Restoration & Recreation Spaces</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- 10-Year Track Record -->
-  <section class="border-t border-neutral-800 bg-neutral-950 py-16">
-    <div class="max-w-5xl mx-auto px-6">
-      <span class="text-xs font-bold text-neutral-400 uppercase tracking-widest">Proven Track Record</span>
-      <h2 class="text-2xl font-bold mt-2 mb-8">A Decade on the Ground in Detroit</h2>
+  <!-- THE DETROIT ON APP SHOWCASE (POC & DOWNLOAD) -->
+  <section id="app" class="py-20 bg-slate-100/70 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-xl">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full text-xs font-bold">
+              <i data-lucide="cpu" class="w-3.5 h-3.5"></i> Re-Engineered with Modern AI Architecture
+            </div>
 
-      <div class="space-y-6 text-sm border-l border-neutral-800 pl-6 ml-2">
-        <div>
-          <span class="text-xs text-blue-400 font-mono">2016</span>
-          <h4 class="font-bold text-white mt-0.5">Detroit Or Nothing Food & Resource Drive</h4>
-          <p class="text-neutral-400 text-xs mt-1">Grassroots emergency aid and holiday food mobilization serving Detroit families directly.</p>
-        </div>
-        <div>
-          <span class="text-xs text-blue-400 font-mono">2016 – 2018</span>
-          <h4 class="font-bold text-white mt-0.5">300+ Local Business Network</h4>
-          <p class="text-neutral-400 text-xs mt-1">Built and scaled the first merchant directory driving residents toward local Detroit establishments.</p>
-        </div>
-        <div>
-          <span class="text-xs text-blue-400 font-mono">2026</span>
-          <h4 class="font-bold text-white mt-0.5">AI-Powered Platform Modernization</h4>
-          <p class="text-neutral-400 text-xs mt-1">Re-engineered Detroit ON from scratch with AI, translating the system into an applied digital skills curriculum for youth cohorts.</p>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-snug">
+              The Detroit ON App:<br />
+              <span class="text-sky-600">Turning Civic Energy Into Neighborhood Wealth.</span>
+            </h2>
+
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+              First launched in 2016 with over 300 Detroit storefronts, we took the original model and completely rebuilt it using AI. Detroit ON serves as both a live utility for residents and a working classroom case study on how modern software is built.
+            </p>
+
+            <!-- Key Features Grid -->
+            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <i data-lucide="map-pin" class="w-5 h-5 text-sky-600 mb-2"></i>
+                <h4 class="text-xs font-bold text-slate-900">Verified D-Vents</h4>
+                <p class="text-[11px] text-slate-600 mt-1">Direct access to neighborhood cleanups, senior deliveries, and community youth shifts.</p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <i data-lucide="tag" class="w-5 h-5 text-emerald-600 mb-2"></i>
+                <h4 class="text-xs font-bold text-slate-900">DON Deal Velocity</h4>
+                <p class="text-[11px] text-slate-600 mt-1">Volunteer points convert to discounts at Detroit-owned stores, keeping capital in the neighborhood.</p>
+              </div>
+            </div>
+
+            <!-- Download / Prototype CTA Links -->
+            <div class="pt-4 flex flex-wrap items-center gap-4">
+              <a 
+                href="https://aistudio.google.com" 
+                target="_blank" 
+                class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-6 py-3.5 rounded-xl transition shadow-md"
+              >
+                <i data-lucide="external-link" class="w-4 h-4 text-sky-400"></i> Open Live AI Web Prototype
+              </a>
+              <span class="text-xs text-slate-600 font-medium">
+                PWA / Web App &bull; No app store barrier needed
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Interactive Mobile Frame Graphic -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="w-72 rounded-[2.5rem] p-3 bg-slate-900 shadow-2xl border-4 border-slate-800">
+              <div class="rounded-[2rem] overflow-hidden bg-white p-4 space-y-4">
+                
+                <div class="flex justify-between items-center text-[10px] text-slate-600 font-bold px-1">
+                  <span>9:41</span>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="wifi" class="w-3 h-3"></i>
+                    <i data-lucide="battery" class="w-3 h-3"></i>
+                  </div>
+                </div>
+
+                <div class="text-center pt-2">
+                  <div class="w-12 h-12 mx-auto rounded-2xl bg-slate-900 text-sky-400 flex items-center justify-center font-black shadow-md">
+                    <i data-lucide="power" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-sm font-black text-slate-900 mt-2">Detroit ON</h3>
+                  <p class="text-[10px] text-slate-600">Neighborhood Impact Hub</p>
+                </div>
+
+                <div class="space-y-2 pt-2">
+                  <div class="p-2.5 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-between">
+                    <div>
+                      <span class="text-[9px] font-bold text-sky-600 uppercase">My 313 Status</span>
+                      <p class="text-xs font-bold text-slate-800">350 Civic Points</p>
+                    </div>
+                    <span class="text-[10px] font-bold text-sky-700 bg-sky-100 px-2 py-0.5 rounded">Active</span>
+                  </div>
+
+                  <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+                    <div>
+                      <span class="text-[9px] font-bold text-emerald-600 uppercase">Available Perk</span>
+                      <p class="text-xs font-bold text-slate-800">20% Off Fenkell Florals</p>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-slate-600"></i>
+                  </div>
+                </div>
+
+                <div class="pt-2 text-center">
+                  <p class="text-[10px] text-slate-600">Scan to preview on mobile:</p>
+                  <div class="mt-2 w-28 h-28 mx-auto bg-slate-100 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600">
+                    <i data-lucide="qr-code" class="w-20 h-20 text-slate-800"></i>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- Institutional Partnership CTA -->
-  <footer id="partner" class="border-t border-neutral-800 py-16 text-center max-w-5xl mx-auto px-6">
-    <h2 class="text-2xl font-bold mb-3">Partner on Cohort Sponsorships</h2>
-    <p class="text-neutral-400 text-xs max-w-md mx-auto mb-6">
-      Now accepting corporate and philanthropic partners to sponsor 16–24 youth cohorts.
-    </p>
-    <a href="mailto:contact@detroitornothing.com" class="inline-block bg-white text-black text-xs font-bold px-6 py-3 rounded-full hover:bg-neutral-200 transition">
-      Request Cohort Proposal
-    </a>
-    <p class="text-[11px] text-neutral-500 mt-10">© 2016–2026 Detroit Or Nothing. All rights reserved.</p>
-  </footer>
+  <!-- WORKSHOP TRACKS (DESIGNED FOR BMO & GRANT SPONSORSHIP) -->
+  <section id="workshops" class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Cohort Curriculum</span>
+        <h2 class="text-3xl font-black text-slate-900 tracking-tight mt-1">Paid Workshops for Young Men (Ages 16–24)</h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Structured for institutional sponsorship (BMO, foundations, workforce boards), our modules blend applied software creation with practical neighborhood leadership.
+        </p>
+      </div>
 
-</body>
-</html>
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Track 1: Applied AI & Rapid Prototyping -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between hover:border-sky-300 transition shadow-sm">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-bold mb-4">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[10px] font-bold text-sky-600 uppercase tracking-wider">Tech Track 01</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-1">Applied AI & Software Prototyping</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mt-3">
+              Using Detroit ON as a live sandbox, youth learn how to move from a napkin sketch to a functioning web app using prompt engineering, component structuring, and database basics.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-slate-200/80 mt-6">
+            <span class="text-[11px] font-semibold text-slate-600">Deliverable: Working Prototype</span>
+          </div>
+        </div>
+
+        <!-- Track 2: Civic Leadership & Neighborhood Economics -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between hover:border-emerald-300 transition shadow-sm">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold mb-4">
+              <i data-lucide="coins" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">Economics Track 02</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-1">Civic Velocity & Local Economics</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mt-3">
+              Teaching young leaders how the circulation of dollars inside Detroit zip codes impacts generational wealth. Covers grassroots organizing, merchant partnerships, and collective action.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-slate-200/80 mt-6">
+            <span class="text-[11px] font-semibold text-slate-600">Deliverable: Corridor Impact Strategy</span>
+          </div>
+        </div>
+
+        <!-- Track 3: Workforce Agency & Professional Readiness -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between hover:border-blue-300 transition shadow-sm">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold mb-4">
+              <i data-lucide="briefcase" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider">Readiness Track 03</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-1">Workforce Agency & Digital Ownership</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mt-3">
+              Translating real-world life experience into marketable professional value. Covers modern project management tools, high-agency communication, and digital portfolio building.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-slate-200/80 mt-6">
+            <span class="text-[11px] font-semibold text-slate-600">Deliverable: Live Digital Portfolio</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Workshop Sign-Up Banner -->
+      <div id="register" class="mt-12 p-8 rounded-3xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div>
+          <h3 class="text-xl font-bold">Bring These Workshops to Your Young Adults</h3>
+          <p class="text-xs text-slate-300 mt-1 max-w-xl leading-relaxed">
+            We partner with financial institutions (such as BMO), municipal programs, community organizations, and workforce centers to fund and execute youth cohorts.
+          </p>
+        </div>
+        <a 
+          href="mailto:contact@detroitornothing.com?subject=Inquiry:%20Sign%20Program%20Up%20For%20Workshops"
+          class="shrink-0 bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-black px-6 py-3.5 rounded-xl transition shadow-md"
+        >
+          Sign Programs Up for Workshops &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CREATOR & DEVELOPER BACKGROUND: MALIK RILEY -->
+  <section id="founder" class="py-20 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Bio Summary -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-600">The Architect Behind Detroit Or Nothing</span>
+          
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-snug">
+            Malik Riley
+            <span class="block text-lg font-semibold text-slate-600 mt-1">Civic Program Manager, Software Architect & Detroit Native</span>
+          </h2>
+
+          <p class="text-sm text-slate-700 leading-relaxed">
+            Born and raised in Detroit, Malik has spent the last decade building programs at the intersection of youth empowerment, community resource mobilization, and technology. He is a proud graduate of <strong>Cass Technical High School</strong> and pursued his higher education at <strong>Michigan State University</strong>.
+          </p>
+
+          <p class="text-sm text-slate-700 leading-relaxed">
+            In addition to architecting and developing the full-stack systems behind <strong>Detroit ON</strong>, Malik operates <strong>Greenhub Detroit</strong> (formerly <em>Planet Earth's Greenhouse</em>)—a legacy, family-owned urban agriculture enterprise on Fenkell Avenue in Detroit. His work merges generational small-business heritage with cutting-edge artificial intelligence workflows.
+          </p>
+
+          <!-- Core Credentials Chips -->
+          <div class="grid sm:grid-cols-2 gap-3 pt-2 text-xs">
+            <div class="p-3 bg-white border border-slate-200 rounded-xl flex items-center gap-3">
+              <i data-lucide="graduation-cap" class="w-4 h-4 text-sky-600 shrink-0"></i>
+              <span class="font-medium text-slate-800">Cass Tech &bull; Michigan State Univ.</span>
+            </div>
+            <div class="p-3 bg-white border border-slate-200 rounded-xl flex items-center gap-3">
+              <i data-lucide="sprout" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+              <span class="font-medium text-slate-800">Owner, Greenhub Detroit (Fenkell Ave)</span>
+            </div>
+            <div class="p-3 bg-white border border-slate-200 rounded-xl flex items-center gap-3">
+              <i data-lucide="code" class="w-4 h-4 text-blue-600 shrink-0"></i>
+              <span class="font-medium text-slate-800">Full-Stack & Applied AI Engineer</span>
+            </div>
+            <div class="p-3 bg-white border border-slate-200 rounded-xl flex items-center gap-3">
+              <i data-lucide="users" class="w-4 h-4 text-amber-600 shrink-0"></i>
+              <span class="font-medium text-slate-800">10+ Years Workforce Program Manager</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Timeline / Legacy Milestone Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md space-y-4">
+            <h4 class="text-xs font-bold uppercase tracking-widest text-slate-600">A Decade of Real Action</h4>
+            
+            <div class="space-y-4 border-l-2 border-sky-100 pl-4 ml-1">
+              <div>
+                <span class="text-[10px] font-bold text-sky-600">2016</span>
+                <p class="text-xs font-bold text-slate-900 mt-0.5">Detroit Or Nothing Food & Resource Drive</p>
+                <p class="text-[11px] text-slate-600">Grassroots mobilization providing essential food boxes and supplies to Detroit families.</p>
+              </div>
+
+              <div>
+                <span class="text-[10px] font-bold text-sky-600">2016 – 2018</span>
+                <p class="text-xs font-bold text-slate-900 mt-0.5">300+ Local Businesses Onboarded</p>
+                <p class="text-[11px] text-slate-600">Built a merchant directory network to incentivize shopping with neighborhood vendors.</p>
+              </div>
+
+              <div>
+                <span class="text-[10px] font-bold text-sky-600">2019 – Present</span>
+                <p class="text-xs font-bold text-slate-900 mt-0.5">Youth Leadership & Workforce Systems</p>
+                <p class="text-[11px] text-slate-600">Running student leadership workshops, food distributions, and young adult employment pathways.</p>
+              </div>
+
+              <div>
+                <span class="text-[10px] font-bold text-sky-600">2026</span>
+                <p class="text-xs font-bold text-slate-900 mt-0.5">AI-Driven Detroit ON Modernization</p>
+                <p class="text-[11px] text-slate-600">Rebuilt the app ground-up using generative AI—creating the template for our youth curriculum.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-12">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-slate-600">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-slate-900 text-sky-400 flex items-center justify-center font-bold">
+          <i data-lucide="power" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <span class="font-bold text-slate-900">Detroit Or Nothing</span> &bull; <span>Detroit ON</span>
+          <p class="text-[11px] text-slate-600">App powered
